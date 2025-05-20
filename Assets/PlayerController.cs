@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
 
         Vector3 move = new Vector3(moveX, 0, moveZ);
-        transform.translate(move * speed * Time.deltaTime, Space.World);
+        transform.Translate(move * speed * Time.deltaTime, Space.World);
     }
     private void OnCollisionEnter(Collision collision)
     {
