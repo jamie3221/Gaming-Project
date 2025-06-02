@@ -4,28 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    public Vector3 targetPositionInScene2 = new Vector3(-41.56f, 30f, 51.3f);
-    private bool isOnTransitionPlatform = false;
     private void Update()
     {
-        if (isOnTransitionPlatform && Keyboard.current.tabKey.wasPressedThisFrame)
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
-            TransferData.targetPosition = targetPositionInScene2;
-            SceneManager.LoadScene("Scene 2");
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Transition Platform"))
-        {
-            isOnTransitionPlatform = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Transition Platform"))
-        {
-            isOnTransitionPlatform = false;
-        }
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            if (currentSceneName == "Scene 1")
+            {
+                SceneManager.LoadScene("Scene 2");
+            }
+            else if (currentSceneName == "Scene 2")
+            {
+                SceneManager.LoadScene("Scene 1");
+            }
+            else
+            {
+                Debug.LogWarning("No valid scene to transition to.");
+            }
+        }   
     }
 }
