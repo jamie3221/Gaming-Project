@@ -1,15 +1,26 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class QuitButton : MonoBehaviour
+public class QuitGame : MonoBehaviour
 {
-    public void OnQuitButtonClicked()
+    public Button quitButton;
+
+    void Start()
     {
-        // If we are running in the editor, stop playing
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        #else
-        // If we are running in a built application, quit the application
-        Application.Quit();
-        #endif
+        if (quitButton != null)
+        {
+            quitButton.onClick.AddListener(() =>
+            {
+                if (Application.isPlaying)
+                {
+                    Debug.Log("Quitting game...");
+                    Application.Quit();
+                }
+            });
+        }
+        else
+        {
+            Debug.LogWarning("Quit button not assigned.");
+        }
     }
 }
