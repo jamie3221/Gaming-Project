@@ -14,9 +14,9 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
+  m_FogMode: 2
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: fb55c9068e23e1946a2d0c835c8ce23d, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 940393620}
   - component: {fileID: 940393619}
   m_Layer: 3
-  m_Name: Main hallway
+  m_Name: Hallway Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,13 +406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0ac37c664278f478651886b557f996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallMaterial: {fileID: 2100000, guid: a030a59ef122de441a5dc597533196d3, type: 2}
-  floorMaterial: {fileID: 2100000, guid: fe811bc2924598c40ba8e894241b6aef, type: 2}
-  ceilingMaterial: {fileID: 2100000, guid: 5e5d3592406067f4e9598820efa216b7, type: 2}
-  playerPrefab: {fileID: 1516387573}
-  length: 10
-  width: 4
-  height: 3
+  easyPrefab: {fileID: 0}
+  mediumPrefab: {fileID: 0}
+  hardPrefab: {fileID: 0}
+  introPrefab: {fileID: 0}
+  player: {fileID: 1516387573}
+  startPoint: {fileID: 0}
 --- !u!4 &940393620
 Transform:
   m_ObjectHideFlags: 0
